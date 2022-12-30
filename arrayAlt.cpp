@@ -66,18 +66,18 @@ int main() {
     if (list1.size() != list2.size()) {
         std::cout << "\nBoth lists must have the "
                   << "same number of elements." << std::endl;
+    } else {
+        // Call the alternating_elements function to get the final list
+        std::list<std::string> result = alternating_elements(list1, list2);
+
+        // Print the final list
+        std::cout << "\nBoth lists combined: [";
+        std::string z = result.back();
+        result.pop_back();
+
+        for (std::string x : result) {
+            std::cout << "'" << x << "', ";
+        }
+        std::cout << "'" << z << "']" << std::endl;
     }
-
-    // Call the alternating_elements function to get the final list
-    std::list<std::string> result = alternating_elements(list1, list2);
-
-    // Print the final list
-    std::cout << "\nBoth lists combined: [";
-    std::string z = result.back();
-    result.pop_back();
-
-    for (std::string x : result) {
-        std::cout << "'" << x << "', ";
-    }
-    std::cout << "'" << z << "']" << std::endl;
 }
